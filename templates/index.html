@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Diabetes Predictor</title>
+</head>
+<body>
+    <div class="title-container">
+        <h2>Diabetes Prediction</h2>
+    </div>
+    <div class="form-container"> <!-- New container for the form -->
+        <form method="POST">
+            <input type="number" name="feature0" placeholder="Age in Years"><br>
+            <input type="number" name="feature1" placeholder="Sex (1 = Male, 2 = Female)" min="1" max="2"><br>
+            <!-- step="any" to allow decimal inputs for BMI to GLU -->
+            <input type="number" name="feature2" placeholder="Body Mass Index" step="any"><br>
+            <input type="number" name="feature3" placeholder="Average Blood Pressure" step="any"><br>
+            <input type="number" name="feature4" placeholder="TC - Total Serum Cholesterol" step="any"><br>
+            <input type="number" name="feature5" placeholder="LDL - Low-Density Lipoproteins" step="any"><br>
+            <input type="number" name="feature6" placeholder="HDL - High-Density Lipoproteins" step="any"><br>
+            <input type="number" name="feature7" placeholder="TCH - Total Cholesterol / HDL" step="any"><br>
+            <input type="number" name="feature8" placeholder="LTG - Log of Serum Triglycerides Level" step="any"><br>
+            <input type="number" name="feature9" placeholder="GLU - Blood Sugar Level" step="any"><br>
+            <button type="submit">Predict</button>
+        </form>
+        {% if result is not none %}
+            <h3>Quantitative measure of disease progression one year after baseline: {{ result }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
+
