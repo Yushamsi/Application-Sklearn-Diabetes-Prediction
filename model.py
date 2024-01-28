@@ -12,8 +12,6 @@ model.fit(diabetes.data, diabetes.target)
 # Save the model
 joblib.dump(model, 'diabetes_model.pkl')
 
-##write code for a flask app
-
 
 
 
